@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Data Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Extractor from PDF and Images</h1>
+        <form id="upload-form" enctype="multipart/form-data">
+            <label for="file-upload" class="custom-file-upload">
+                <input id="file-upload" type="file" name="file" accept=".pdf|image/*">
+                Choose File
+            </label>
+            <div id="file-name"></div>
+            <button type="submit">Upload</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function() {
+            var fileName = this.files[0].name;
+            document.getElementById('file-name').innerText = fileName;
+        });
+
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
