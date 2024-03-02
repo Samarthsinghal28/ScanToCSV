@@ -3,11 +3,6 @@ os
 pytesseract
 pdf2image
 Pillow
+asyncio
+pypdfium2
 
-
-Additional Requirements:
-1)Tesseract should be installed on the Device add its path must be added in the environment variables.
-	link : https://tesseract-ocr.github.io/
-	
-2)Poppler should be installed on the Device add its path must be added in the environment variables.
-	link: https://poppler.freedesktop.org

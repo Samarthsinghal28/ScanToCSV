@@ -13,18 +13,16 @@ This is a web application for extracting data from PDF files. It allows users to
 
 - **Tesseract OCR**: Follow the installation instructions for your operating system from the official repository: https://github.com/tesseract-ocr/tesseract
 
-- **poppler**: Follow the installation instructions for your operating system from the official repository: https://poppler.freedesktop.org/
 
 4. Set environment variables:
    
    - **For Windows**:
      - Add the path to the `Tesseract` executable (`tesseract.exe`) to the `PATH` environment variable.
-     - Add the path to the `poppler` binary directory (containing `pdftoppm.exe` and `pdftocairo.exe`) to the `PATH` environment variable.
      -Add the TESSDATA_PREFIX user variable to  environment variables and set the value(path) to the tessdata folder of Tessaract-OCR.
 
    - **For Unix/Linux**:
      - Add the path to the `Tesseract` executable (`tesseract`) to the `PATH` environment variable.
-     - Add the path to the `poppler` binary directory (containing `pdftoppm` and `pdftocairo`) to the `PATH` environment variable.
+    
 
 5. Run the Flask application: python app.py
 

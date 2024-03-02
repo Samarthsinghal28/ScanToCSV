@@ -5,7 +5,6 @@ from pytesseract import image_to_string
 from flask import Flask, render_template, request, jsonify
 import os
 from werkzeug.utils import secure_filename
-import csv
 import asyncio
 import asyncio
 import aiofiles
