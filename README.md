@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PDF Data Extractor
 
 This is a web application for extracting data from PDF files. It allows users to upload a PDF file, extracts data from it, and displays the extracted data on the webpage.
